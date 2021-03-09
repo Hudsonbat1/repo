@@ -41,7 +41,11 @@ public class MorseCodeConverterTest {
 		
 		String test2="daisy daisy";		
 		String converter2 = MorseCodeConverter.convertToEnglish("-.. .- .. ... -.-- / -.. .- .. ... -.-- ");
-		assertEquals("daisy daisy", converter2);
+		assertEquals(test2, converter2);
+		
+		String test3 = "this is a morse code message from an anonymous individual";
+		String converter3 = MorseCodeConverter.convertToEnglish("- .... .. ... / .. ... / .- / -- --- .-. ... . / -.-. --- -.. . / -- . ... ... .- --. . / ..-. .-. --- -- / .- -. / .- -. --- -. -.-- -- --- ..- ... / .. -. -.. .. ...- .. -.. ..- .- .-..");
+		assertEquals(test3,converter3);
 	}
 
 	@Test
@@ -55,6 +59,11 @@ public class MorseCodeConverterTest {
 		getFile("DaisyDaisy.txt");
 		String converter2 = MorseCodeConverter.convertToEnglish(inputFile);
 		assertEquals(test2,converter2);
+		
+		String test3 = "how do i love thee let me count the ways";
+		getFile("howDoILoveThee.txt");
+		String converter3 = MorseCodeConverter.convertToEnglish(".... --- .-- / -.. --- / .. / .-.. --- ...- . / - .... . . / .-.. . - / -- . / -.-. --- ..- -. - / - .... . / .-- .- -.-- ...");
+		assertEquals(test3,converter3);
 
 	}
 	
